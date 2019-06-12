@@ -2,9 +2,7 @@
 An in-depth introduction to the field of machine learning, from linear models to deep learning and reinforcement learning, through hands-on Python projects.  
 * **Provider**: [Massachusetts Institute of Technology (MITx)](https://www.edx.org/school/mitx)
 * **MicroMasters® Program**: [Statistics and Data Science](https://www.edx.org/micromasters/mitx-statistics-and-data-science)
-* **Website**: [Machine Learning with Python: from Linear Models to Deep Learning](https://www.edx.org/course/machine-learning-with-python-from-linear-models-to-deep-learning)
-* **Course number**: 6.86x
-* **Course Format**: Instructor-Led
+* **Website**: [Machine Learning with Python: from Linear Models to Deep Learning (6.86x)](https://www.edx.org/course/machine-learning-with-python-from-linear-models-to-deep-learning)
 * **Start date**: Jun 11, 2019
 * **End date**: Sep 4, 2019
 * **Expected outcomes**:
