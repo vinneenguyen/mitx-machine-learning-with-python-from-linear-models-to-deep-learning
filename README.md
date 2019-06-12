@@ -6,7 +6,7 @@ An in-depth introduction to the field of machine learning, from linear models to
 * **Course number**: 6.86x
 * **Course Format**: Instructor-Led
 * **Start date**: Jun 11, 2019
-* **Duration**: 13 weeks
+* **End date**: Sep 4, 2019
 * **Expected outcomes**:
   * Understand principles behind machine learning problems such as classification, regression, clustering, and reinforcement learning
   * Implement and analyze models such as linear models, kernel machines, neural networks, and graphical models
