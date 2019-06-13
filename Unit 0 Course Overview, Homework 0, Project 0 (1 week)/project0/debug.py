@@ -10,6 +10,22 @@ def get_sum_metrics(predictions, metrics=[]):
     return sum_metrics
 #pragma: coderesponse end
 
+def get_sum_metrics_fixed(predictions, metrics=[]):
+    if not metrics:
+      metrics = []
+      
+    def generate(i):
+      return lambda x: x + i
+    for i in range(3):
+        metrics.append(generate(i))
+
+    sum_metrics = 0
+    for metric in metrics:
+        sum_metrics += metric(predictions)
+
+    return sum_metrics
+get_sum_metrics = get_sum_metrics_fixed # Use get_sum_metrics_fixed instead
+
 
 def main():
     print(get_sum_metrics(0))  # Should be (0 + 0) + (0 + 1) + (0 + 2) = 3
