@@ -330,10 +330,11 @@ def bag_of_words(texts, stop_words=None):
 
 
 #pragma: coderesponse template
-def extract_bow_feature_vectors(reviews, dictionary):
+def extract_bow_feature_vectors(reviews, dictionary, binary=True):
     """
     Inputs a list of string reviews
     Inputs the dictionary of words as given by bag_of_words
+    binary: if True, binary features; counts features otherwise
     Returns the bag-of-words feature matrix representation of the data.
     The returned matrix is of shape (n, m), where n is the number of reviews
     and m the total number of entries in the dictionary.
@@ -349,7 +350,10 @@ def extract_bow_feature_vectors(reviews, dictionary):
         word_list = extract_words(text)
         for word in word_list:
             if word in dictionary:
-                feature_matrix[i, dictionary[word]] = 1
+                if binary:
+                    feature_matrix[i, dictionary[word]] = 1
+                else:
+                    feature_matrix[i, dictionary[word]] += 1
     return feature_matrix
 #pragma: coderesponse end
 
