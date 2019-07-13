@@ -36,6 +36,5 @@ def multi_class_svm(train_x, train_y, test_x):
 
 
 def compute_test_error_svm(test_y, pred_test_y):
-    print("dfdbf")
     err = np.sum(pred_test_y != test_y) / test_y.shape[0]
     return err
