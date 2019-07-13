@@ -36,4 +36,4 @@ def multi_class_svm(train_x, train_y, test_x):
 
 
 def compute_test_error_svm(test_y, pred_test_y):
-    raise NotImplementedError
+    return np.sum(pred_test_y != test_y) / test_y.shape[0]
