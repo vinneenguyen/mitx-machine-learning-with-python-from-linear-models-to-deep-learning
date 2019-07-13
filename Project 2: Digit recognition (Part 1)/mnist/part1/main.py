@@ -130,7 +130,7 @@ def run_softmax_on_MNIST_mod3(temp_parameter=1):
     See run_softmax_on_MNIST for more info.
     """
     #YOUR CODE HERE
-    raise NotImplementedError
+#     raise NotImplementedError
 
 
 # TODO: Run run_softmax_on_MNIST_mod3(), report the error rate
