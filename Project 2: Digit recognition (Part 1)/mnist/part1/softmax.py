@@ -65,7 +65,12 @@ def compute_cost_function(X, Y, theta, lambda_factor, temp_parameter):
         c - the cost value (scalar)
     """
     #YOUR CODE HERE
-    raise NotImplementedError
+    n, d = X.shape # datapoints, features
+    prob = compute_probabilities(X, theta, temp_parameter)
+    loss = -np.log(prob[Y, range(n)]).mean() # only account prob value for label Y(i)
+    reg = 1/2 * lambda_factor * np.sum(theta**2) # regularization term
+    
+    return loss + reg
 
 def run_gradient_descent_iteration(X, Y, theta, alpha, lambda_factor, temp_parameter):
     """
