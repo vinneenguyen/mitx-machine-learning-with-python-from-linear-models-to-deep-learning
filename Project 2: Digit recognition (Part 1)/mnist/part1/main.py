@@ -119,7 +119,8 @@ def run_softmax_on_MNIST(temp_parameter=1):
     #      and print the test_error_mod3
     return test_error
 
-print('softmax test_error=', run_softmax_on_MNIST(temp_parameter=1))
+if __name__ == "__main__":
+    print('softmax test_error=', run_softmax_on_MNIST(temp_parameter=1))
 
 # TODO: Find the error rate for temp_parameter = [.5, 1.0, 2.0]
 #      Remember to return the tempParameter to 1, and re-run run_softmax_on_MNIST
