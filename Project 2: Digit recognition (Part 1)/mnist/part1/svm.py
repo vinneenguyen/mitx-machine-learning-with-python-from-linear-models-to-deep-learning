@@ -32,7 +32,11 @@ def multi_class_svm(train_x, train_y, test_x):
     Returns:
         pred_test_y - (m,) NumPy array containing the labels (int) for each test data point
     """
-#     #raise NotImplementedError
+    clf = LinearSVC(random_state=0, C=0.1)
+    clf.fit(train_x, train_y)
+    preds = clf.predict(test_x)
+    
+    return preds
 
 
 def compute_test_error_svm(test_y, pred_test_y):
