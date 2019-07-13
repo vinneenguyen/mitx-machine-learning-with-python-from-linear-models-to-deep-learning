@@ -15,7 +15,7 @@ def one_vs_rest_svm(train_x, train_y, test_x):
     Returns:
         pred_test_y - (m,) NumPy array containing the labels (0 or 1) for each test data point
     """
-    clf = LinearSVC(C=10, random_state = 0)
+    clf = LinearSVC(C=0.1, random_state = 0)
     clf.fit(train_x, train_y)
     
     return clf.predict(test_x)
