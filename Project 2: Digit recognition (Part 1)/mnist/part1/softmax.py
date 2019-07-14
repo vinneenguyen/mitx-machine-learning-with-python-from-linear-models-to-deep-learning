@@ -40,7 +40,7 @@ def compute_probabilities(X, theta, temp_parameter):
     
     # Softmax
     prob = np.exp(z)
-    H /= np.sum(prob, axis=0)
+    prob /= np.sum(prob, axis=0)
     
 #     H = np.zeros((k, n))
 #     for i in range(n): # each data point
@@ -53,7 +53,7 @@ def compute_probabilities(X, theta, temp_parameter):
 #         h /= np.sum(h)
 #         H[:, i] = h
     
-    return H
+    return prob
 
 def compute_cost_function(X, Y, theta, lambda_factor, temp_parameter):
     """
