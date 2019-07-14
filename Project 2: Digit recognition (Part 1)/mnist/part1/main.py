@@ -166,7 +166,7 @@ test_pca = project_onto_PC(test_x, pcs, n_components)
 # TODO: Use the plot_PC function in features.py to produce scatterplot
 #       of the first 100 MNIST images, as represented in the space spanned by the
 #       first 2 principal components found above.
-plot_PC(train_x[range(100),], pcs, train_y[range(100)])
+# plot_PC(train_x[range(100),], pcs, train_y[range(100)])
 
 
 # TODO: Use the reconstruct_PC function in features.py to show
