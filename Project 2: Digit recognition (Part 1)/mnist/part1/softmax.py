@@ -35,7 +35,7 @@ def compute_probabilities(X, theta, temp_parameter):
     n, d = X.shape
     k = theta.shape[0] # number of labels
     
-    z = theta.dot(X) / temp_parameter # Linear transformation
+    z = theta.dot(X.T) / temp_parameter # Linear transformation
     z -= z.max(axis=0) # keep the resulting number from getting too large
     
     # Softmax
