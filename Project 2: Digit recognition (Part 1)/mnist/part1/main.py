@@ -151,49 +151,49 @@ def run_softmax_on_MNIST_mod3(temp_parameter=1):
 
 # TODO: First fill out the PCA functions in features.py as the below code depends on them.
 
-n_components = 18
-pcs = principal_components(train_x)
-train_pca = project_onto_PC(train_x, pcs, n_components)
-test_pca = project_onto_PC(test_x, pcs, n_components)
-# train_pca (and test_pca) is a representation of our training (and test) data
-# after projecting each example onto the first 18 principal components.
+# n_components = 18
+# pcs = principal_components(train_x)
+# train_pca = project_onto_PC(train_x, pcs, n_components)
+# test_pca = project_onto_PC(test_x, pcs, n_components)
+# # train_pca (and test_pca) is a representation of our training (and test) data
+# # after projecting each example onto the first 18 principal components.
 
 
-# TODO: Train your softmax regression model using (train_pca, train_y)
-#       and evaluate its accuracy on (test_pca, test_y).
+# # TODO: Train your softmax regression model using (train_pca, train_y)
+# #       and evaluate its accuracy on (test_pca, test_y).
 
 
-# TODO: Use the plot_PC function in features.py to produce scatterplot
-#       of the first 100 MNIST images, as represented in the space spanned by the
-#       first 2 principal components found above.
+# # TODO: Use the plot_PC function in features.py to produce scatterplot
+# #       of the first 100 MNIST images, as represented in the space spanned by the
+# #       first 2 principal components found above.
 # plot_PC(train_x[range(100),], pcs, train_y[range(100)])
 
 
-# TODO: Use the reconstruct_PC function in features.py to show
-#       the first and second MNIST images as reconstructed solely from
-#       their 18-dimensional principal component representation.
-#       Compare the reconstructed images with the originals.
-firstimage_reconstructed = reconstruct_PC(train_pca[0, ], pcs, n_components, train_x)
-plot_images(firstimage_reconstructed)
-plot_images(train_x[0,])
+# # TODO: Use the reconstruct_PC function in features.py to show
+# #       the first and second MNIST images as reconstructed solely from
+# #       their 18-dimensional principal component representation.
+# #       Compare the reconstructed images with the originals.
+# firstimage_reconstructed = reconstruct_PC(train_pca[0, ], pcs, n_components, train_x)
+# plot_images(firstimage_reconstructed)
+# plot_images(train_x[0,])
 
-secondimage_reconstructed = reconstruct_PC(train_pca[1, ], pcs, n_components, train_x)
-plot_images(secondimage_reconstructed)
-plot_images(train_x[1,])
-
-
-
-## Cubic Kernel ##
-# TODO: Find the 10-dimensional PCA representation of the training and test set
+# secondimage_reconstructed = reconstruct_PC(train_pca[1, ], pcs, n_components, train_x)
+# plot_images(secondimage_reconstructed)
+# plot_images(train_x[1,])
 
 
-# TODO: First fill out cubicFeatures() function in features.py as the below code requires it.
 
-train_cube = cubic_features(train_pca10)
-test_cube = cubic_features(test_pca10)
-# train_cube (and test_cube) is a representation of our training (and test) data
-# after applying the cubic kernel feature mapping to the 10-dimensional PCA representations.
+# ## Cubic Kernel ##
+# # TODO: Find the 10-dimensional PCA representation of the training and test set
 
 
-# TODO: Train your softmax regression model using (train_cube, train_y)
-#       and evaluate its accuracy on (test_cube, test_y).
+# # TODO: First fill out cubicFeatures() function in features.py as the below code requires it.
+
+# train_cube = cubic_features(train_pca10)
+# test_cube = cubic_features(test_pca10)
+# # train_cube (and test_cube) is a representation of our training (and test) data
+# # after applying the cubic kernel feature mapping to the 10-dimensional PCA representations.
+
+
+# # TODO: Train your softmax regression model using (train_cube, train_y)
+# #       and evaluate its accuracy on (test_cube, test_y).
