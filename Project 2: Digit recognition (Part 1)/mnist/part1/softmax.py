@@ -154,7 +154,26 @@ def compute_test_error_mod3(X, Y, theta, temp_parameter):
         test_error - the error rate of the classifier (scalar)
     """
     #YOUR CODE HERE
-    raise NotImplementedError
+def compute_test_error_mod3(X, Y, theta, temp_parameter):
+    """
+    Returns the error of these new labels when the classifier predicts the digit. (mod 3)
+
+    Args:
+        X - (n, d - 1) NumPy array (n datapoints each with d - 1 features)
+        Y - (n, ) NumPy array containing the labels (a number from 0-2) for each
+            data point
+        theta - (k, d) NumPy array, where row j represents the parameters of our
+                model for label j
+        temp_parameter - the temperature parameter of softmax function (scalar)
+
+    Returns:
+        test_error - the error rate of the classifier (scalar)
+    """
+    #YOUR CODE HERE
+    preds = get_classification(X, theta, temp_parameter) % 3
+    err = np.mean(Y != preds)
+    
+    return err
 
 def softmax_regression(X, Y, temp_parameter, alpha, lambda_factor, k, num_iterations):
     """
