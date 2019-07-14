@@ -94,16 +94,17 @@ def run_gradient_descent_iteration(X, Y, theta, alpha, lambda_factor, temp_param
     k = theta.shape[0]
     
     Yoh = sparse.coo_matrix(([1]*n, (Y, range(n))), shape=(k,n)).toarray() # labels in one vs. all (one hot) format
-    prob = compute_probabilities(X, theta, temp_parameter)
-    prob_app = Yoh*1 - prob # probabilities applicable to each label
+    prob_app = Yoh*1 - compute_probabilities(X, theta, temp_parameter) # probabilities applicable to each label
     grad = np.zeros(theta.shape)
-    for i in range(k): # each label
-        loss_grad = -1/(temp_parameter*n) * np.sum(prob_app[i][:, None] * X, axis=0)
-        reg_grad = lambda_factor * theta[i]
-        grad[i] = loss_grad + reg_grad
+    loss_grad = -1/(temp_parameter*n) * np.sum(prob_app[:, :, None] * X, axis=1)
+    reg_grad = lambda_factor * theta
+
+#     for i in range(k): # each label
+#         loss_grad = -1/(temp_parameter*n) * np.sum(prob_app[i][:, None] * X, axis=0)
+#         grad[i] = loss_grad + reg_grad
     
     # Update
-    theta -= alpha * grad
+    theta -= alpha * (loss_grad + reg_grad)
     
     return theta
 
