@@ -15,7 +15,11 @@ def project_onto_PC(X, pcs, n_components):
     #       of the eigenvectors returned by principal_components().
     #       Note that each eigenvector is already be a unit-vector,
     #       so the projection may be done using matrix multiplication.
-#     raise NotImplementedError
+    X_centered = center_data(X)
+    pcs = pcs[:, :n_components]
+    X_pro = X_centered.dot(pcs)
+    
+    return X_pro
 
 
 ### Functions which are already complete, for you to use ###
