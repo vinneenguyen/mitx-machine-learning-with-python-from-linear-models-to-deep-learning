@@ -162,12 +162,12 @@ def run_softmax_on_MNIST_mod3(temp_parameter=1):
 
 # TODO: First fill out the PCA functions in features.py as the below code depends on them.
 
-# n_components = 18
-# pcs = principal_components(train_x)
-# train_pca = project_onto_PC(train_x, pcs, n_components)
-# test_pca = project_onto_PC(test_x, pcs, n_components)
-# # train_pca (and test_pca) is a representation of our training (and test) data
-# # after projecting each example onto the first 18 principal components.
+n_components = 18
+pcs = principal_components(train_x)
+train_pca = project_onto_PC(train_x, pcs, n_components)
+test_pca = project_onto_PC(test_x, pcs, n_components)
+# train_pca (and test_pca) is a representation of our training (and test) data
+# after projecting each example onto the first 18 principal components.
 
 
 # # TODO: Train your softmax regression model using (train_pca, train_y)
