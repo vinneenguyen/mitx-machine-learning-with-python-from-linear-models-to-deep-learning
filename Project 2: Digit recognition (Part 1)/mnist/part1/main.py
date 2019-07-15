@@ -172,6 +172,16 @@ test_pca = project_onto_PC(test_x, pcs, n_components)
 
 # # TODO: Train your softmax regression model using (train_pca, train_y)
 # #       and evaluate its accuracy on (test_pca, test_y).
+def run_softmax_on_MNIST_pcs(temp_parameter=1):
+    """
+    Trains Softmax regression on PCA images
+    """
+    #YOUR CODE HERE
+    theta, cost_function_history = softmax_regression(train_pca, train_y, temp_parameter, alpha= 0.3, lambda_factor = 1.0e-4, k = 10, num_iterations = 150)
+    plot_cost_function_over_time(cost_function_history)
+    test_error = compute_test_error(test_pca, test_y, theta, temp_parameter)
+    
+    return test_error
 
 
 # # TODO: Use the plot_PC function in features.py to produce scatterplot
