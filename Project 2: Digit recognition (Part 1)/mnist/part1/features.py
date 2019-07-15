@@ -125,23 +125,23 @@ def principal_components(X):
     return eigen_vectors
 
 
-# def plot_PC(X, pcs, labels):
-#     """
-#     Given the principal component vectors as the columns of matrix pcs,
-#     this function projects each sample in X onto the first two principal components
-#     and produces a scatterplot where points are marked with the digit depicted in
-#     the corresponding image.
-#     labels = a numpy array containing the digits corresponding to each image in X.
-#     """
-#     pc_data = project_onto_PC(X, pcs, n_components=2)
-#     text_labels = [str(z) for z in labels.tolist()]
-#     fig, ax = plt.subplots()
-#     ax.scatter(pc_data[:, 0], pc_data[:, 1], alpha=0, marker=".")
-#     for i, txt in enumerate(text_labels):
-#         ax.annotate(txt, (pc_data[i, 0], pc_data[i, 1]))
-#     ax.set_xlabel('PC 1')
-#     ax.set_ylabel('PC 2')
-#     plt.show()
+def plot_PC(X, pcs, labels):
+    """
+    Given the principal component vectors as the columns of matrix pcs,
+    this function projects each sample in X onto the first two principal components
+    and produces a scatterplot where points are marked with the digit depicted in
+    the corresponding image.
+    labels = a numpy array containing the digits corresponding to each image in X.
+    """
+    pc_data = project_onto_PC(X, pcs, n_components=2)
+    text_labels = [str(z) for z in labels.tolist()]
+    fig, ax = plt.subplots()
+    ax.scatter(pc_data[:, 0], pc_data[:, 1], alpha=0, marker=".")
+    for i, txt in enumerate(text_labels):
+        ax.annotate(txt, (pc_data[i, 0], pc_data[i, 1]))
+    ax.set_xlabel('PC 1')
+    ax.set_ylabel('PC 2')
+    plt.show()
 
 
 def reconstruct_PC(x_pca, pcs, n_components, X):
