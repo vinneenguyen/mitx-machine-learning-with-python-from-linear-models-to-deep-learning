@@ -235,9 +235,10 @@ def check_project_onto_PC():
     ]);
     pcs = features.principal_components(X)
     exp_res = np.array([
-        [2, 0, 0],
-        [0, 0, 0],
-        [-2, 0, 0]
+        [5.61248608, 0],
+        [1.87082869, 0],
+        [-1.87082869, 0],
+        [-5.61248608, 0],
     ])
     n_components = 3
     if check_array(
