@@ -216,8 +216,8 @@ train_pca10 = project_onto_PC(train_x, pcs, n_components)
 test_pca10 = project_onto_PC(test_x, pcs, n_components)
 train_cube = cubic_features(train_pca10)
 test_cube = cubic_features(test_pca10)
-train_cube (and test_cube) is a representation of our training (and test) data
-after applying the cubic kernel feature mapping to the 10-dimensional PCA representations.
+# train_cube (and test_cube) is a representation of our training (and test) data
+# after applying the cubic kernel feature mapping to the 10-dimensional PCA representations.
 
 
 # TODO: Train your softmax regression model using (train_cube, train_y)
