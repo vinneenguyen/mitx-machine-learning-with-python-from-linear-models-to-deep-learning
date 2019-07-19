@@ -26,6 +26,7 @@ def polynomial_kernel(X, Y, c, p):
     return K
 
 
+
 def rbf_kernel(X, Y, gamma):
     """
         Compute the Gaussian RBF kernel between two matrices X and Y::
@@ -41,4 +42,6 @@ def rbf_kernel(X, Y, gamma):
             kernel_matrix - (n, m) Numpy array containing the kernel matrix
     """
     # YOUR CODE HERE
-    raise NotImplementedError
+    K = np.exp(-gamma * np.linalg.norm(c, axis=-1)**2)
+    
+    return K
